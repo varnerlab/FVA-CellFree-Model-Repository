@@ -1,4 +1,4 @@
-function Bounds(DF,TXTL)
+function Bounds(DF,TXTL,state_array)
 
 FB = DF["default_flux_bounds_array"]
 
@@ -46,12 +46,18 @@ FB = DF["default_flux_bounds_array"]
   FB[AASyn,2] = DF["AASyn"];
   FB[AADeg,2] = 0;
 
+  FB[1:191,1] = 0
+  FB[1:191,2] = 100000
+  FB[192:end,1] = 0
+  FB[192:end,2] = 0
+  FB[197,2] = 100 # hydrogen transport
+
 #==============================================TXTL=====================================================#
-  RNAP_concentration_nM = TXTL["RNAP_concentration_nM"];
+  RNAP_concentration_nM = state_array[143] * 10^6 # conversion to nM #TXTL["RNAP_concentration_nM"];
   RNAP_elongation_rate = TXTL["RNAP_elongation_rate"];
-  RIBOSOME_concentration = TXTL["RIBOSOME_concentration"];
+  RIBOSOME_concentration = state_array[141]#TXTL["RIBOSOME_concentration"];
   RIBOSOME_elongation_rate = TXTL["RIBOSOME_elongation_rate"];
-  kd = TXTL["mRNA_degradation_rate"];
+  kd = TXTL["mRNA_degradation_rate"]*2;
   mRNA_length = TXTL["mRNA_length"];
   protein_length = TXTL["protein_length"];
   gene_copies = TXTL["gene_copies"];
@@ -64,20 +70,29 @@ FB = DF["default_flux_bounds_array"]
 #====================================Transcription===================================================#
 #Compute the promoter strength P -
   K1 = Promoter[1]
-  P = (K1)/(1+K1);
-  gene_concentration = gene_copies*(1e9/6.02e23)*(1/volume);
+  P = 0.8*(K1)/(1+K1);
+  gene_concentration = state_array[1] * 10^6#gene_copies*(1e9/6.02e23)*(1/volume);
   saturation_term = (gene_concentration)/(plasmid_saturation_coefficient+gene_concentration);
   RNAP_concentration = RNAP_concentration_nM/1e6; #nM to mM
   TX = (RNAP_elongation_rate*(1/mRNA_length)*(RNAP_concentration)*(saturation_term)*3600)*P;
 
 #====================================Translation===================================================#
   mRNA_steady_state = (TX/kd);
+  mRNA_state = state_array[144]
   translation_rate_constant = polysome_amplification*(3*RIBOSOME_elongation_rate)*(1/mRNA_length)*3600;
-  TL = translation_rate_constant*RIBOSOME_concentration*mRNA_steady_state/(mRNA_saturation_coefficient+mRNA_steady_state);
+  TL = translation_rate_constant*RIBOSOME_concentration*mRNA_state/(mRNA_saturation_coefficient+mRNA_state);
+  DEG = mRNA_state * kd
 #===================================================================================================#
-  FB[167,1:2] = TX #transcriptional initiation
-  FB[169,1:2] = TX #mRNA_degradation
+  FB[167,2] = TX #transcriptional initiation
+  FB[168,2] = TX #transcriptional elongation
+  FB[167,1] = TX #transcriptional initiation
+  FB[168,1] = TX#0 #transcriptional elongation
+  FB[169,1:2] = DEG #mRNA_degradation
   FB[170,2] = TL #translations initiation
+  FB[171,2] = TL #translations elongation
+  FB[170,1] = 0 #translations initiation
+  FB[171,1] = TL #translations elongation
+  FB = max(0,FB)
   DF["default_flux_bounds_array"] = FB
   return DF
 end
