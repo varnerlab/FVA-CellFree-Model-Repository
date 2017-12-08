@@ -1,0 +1,144 @@
+#include("DataDictionary.jl")
+#data_dictionary = DataDictionary(0,0,0)
+
+#metabolite_list = data_dictionary["list_of_metabolite_symbols"]
+#rxn_list = data_dictionary["list_of_reaction_strings"]
+
+#number_of_fluxes = length(data_dictionary["default_flux_bounds_array"][:,1])
+#number_of_species = length(data_dictionary["species_bounds_array"][:,1])
+
+## this determines which parameters are fitted to data
+#dataset_index = [15; 18; 22; 24; 27; 29; 31; 34; 38; 41; 42; 59; 60; 61; 66; 69; 70; 76; 79; 83; 84; 86; 88; 89; 106; 110; 114; 121; 123; 126; 128; 130; 132; 133; 134; 135; 140]
+#non_dataset_index = collect(1:number_of_species)
+#deleteat!(non_dataset_index,dataset_index)
+
+#species_list = data_dictionary["list_of_metabolite_symbols"]
+#species_list_dataset = species_list[dataset_index]
+#species_list_non_dataset = species_list[non_dataset_index]
+
+#species_constraint_array = Array[]
+#Labels = String[]
+
+#Accuracy_AC = readdlm("Results/AC/Accuracy")
+#Precision_AC = readdlm("Results/AC/Precision")
+#Exit_flag_AC = readdlm("Results/AC/EXIT_FLAG")
+
+#Accuracy_ADP = readdlm("Results/ADP/Accuracy")
+#Precision_ADP = readdlm("Results/ADP/Precision")
+#Exit_flag_ADP = readdlm("Results/ADP/EXIT_FLAG")
+
+#Accuracy_Other = readdlm("Results/Other/Accuracy")
+#Precision_Other = readdlm("Results/Other/Precision")
+#Exit_flag_Other = readdlm("Results/Other/Exit_flag")
+
+#Accuracy = [Accuracy_AC;Accuracy_ADP;Accuracy_Other]
+#Precision = [Precision_AC;Precision_ADP;Precision_Other]
+#Exit_flag = [Exit_flag_AC Exit_flag_ADP Exit_flag_Other]
+
+Accuracy_Single = readdlm("Results/Single/Accuracy")
+Precision_Single = readdlm("Results/Single/Precision")
+Exit_flag_Single = readdlm("Results/Single/EXIT_FLAG")
+
+Accuracy_Oct11 = readdlm("Results/Oct11/Accuracy")
+Precision_Oct11 = readdlm("Results/Oct11/Precision")
+Exit_flag_Oct11 = readdlm("Results/Oct11/EXIT_FLAG")
+
+Accuracy_Other = readdlm("Results/Other/Accuracy")
+Precision_Other = readdlm("Results/Other/Precision")
+Exit_flag_Other = readdlm("Results/Other/Exit_flag")
+
+Accuracy = [Accuracy_Single;Accuracy_Oct11;Accuracy_Other]
+Precision = [Precision_Single;Precision_Oct11;Precision_Other]
+Exit_flag = [Exit_flag_Single Exit_flag_Oct11 Exit_flag_Other]
+exit_flag = sum(5-Exit_flag,1)'/size(Exit_flag,1)
+
+writedlm("Results/Accuracy",Accuracy)
+writedlm("Results/Precision",Precision)
+writedlm("Results/Exit_flag",Exit_flag)
+writedlm("Results/exit_flag",exit_flag)
+
+Metabolite_names = Labels[1:37]
+LabelDict = Dict()
+for i in 1:length(Metabolite_names)
+	LabelDict[Metabolite_names[i][7:end]] = i
+end
+
+ACCURACY = zeros(37,37)
+PRECISION = zeros(37,37)
+EXIT_FLAG = zeros(37,37)
+for i in 1:37
+	key = Labels[i]
+	Label1 = key[7:end]
+	ACCURACY[LabelDict[Label1],LabelDict[Label1]] = Accuracy[i]
+	PRECISION[LabelDict[Label1],LabelDict[Label1]] = Precision[i]
+	EXIT_FLAG[LabelDict[Label1],LabelDict[Label1]] = exit_flag[i]
+end
+for i in 38:703
+	key = Labels[i]
+	Label1 = ""
+	Label2 = ""
+	for j in 1:length(key)-5
+		subkey = key[j:j+5]
+		if subkey == "_Delta"
+			Label1 = key[7:j-1]
+			Label2 = key[j+7:end]
+		end
+	end
+	ACCURACY[LabelDict[Label1],LabelDict[Label2]] = Accuracy[i]
+	PRECISION[LabelDict[Label1],LabelDict[Label2]] = Precision[i]
+	EXIT_FLAG[LabelDict[Label1],LabelDict[Label2]] = exit_flag[i]
+	ACCURACY[LabelDict[Label2],LabelDict[Label1]] = Accuracy[i]
+	PRECISION[LabelDict[Label2],LabelDict[Label1]] = Precision[i]
+	EXIT_FLAG[LabelDict[Label2],LabelDict[Label1]] = exit_flag[i]
+end
+
+ACCURACY -= minimum(ACCURACY[find(ACCURACY)])
+ACCURACY /= maximum(ACCURACY)
+PRECISION -= minimum(PRECISION[find(PRECISION)])
+PRECISION /= maximum(PRECISION)
+ACCURACY[find(ACCURACY.==minimum(ACCURACY))] = 0
+PRECISION[find(PRECISION.==minimum(PRECISION))] = 0
+ACCURACY_total = sum(ACCURACY,2)
+PRECISION_total = sum(PRECISION,2)
+
+writedlm("Results/ACCURACY",ACCURACY)
+writedlm("Results/PRECISION",PRECISION)
+writedlm("Results/ACCURACY_total",ACCURACY_total)
+writedlm("Results/PRECISION_total",PRECISION_total)
+
+acc_importance = maximum(ACCURACY_total)-ACCURACY_total
+pre_importance = maximum(PRECISION_total)-PRECISION_total
+acc_importance /= maximum(acc_importance)
+pre_importance /= maximum(pre_importance)
+acc_importance += .1
+pre_importance += .1
+
+using PyPlot
+f,ax = subplots()
+plot(acc_importance,pre_importance,"wo")
+xlabel("Influence on model accuracy")
+ylabel("Influence on model precision")
+ax[:set_yticklabels]([])
+ax[:set_xticklabels]([])
+savefig("Results/ACCvsPRE",pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
