@@ -1,0 +1,163 @@
+translation CAT & $<$0.01 & R\_a\_syn\_6 & $<$0.01 \\ 
+translation initiation & $<$0.01 & R\_or\_syn\_1 & $<$0.01 \\ 
+tRNA charging (ALA) & $<$0.01 & R\_or\_syn\_2 & $<$0.01 \\ 
+tRNA charging (CYS) & $<$0.01 & R\_adhe\_net & $<$0.01 \\ 
+tRNA charging (ASP) & $<$0.01 & translation & $<$0.01 \\ 
+tRNA charging (HIS) & $<$0.01 & tRNA charging (PHE) & $<$0.01 \\ 
+tRNA charging (SER) & $<$0.01 & tRNA charging (ALA) & $<$0.01 \\ 
+tRNA charging (TYR) & $<$0.01 & tRNA charging (GLN) & $<$0.01 \\ 
+tRNA charging (PHE) & $<$0.01 & tRNA charging (THR) & $<$0.01 \\ 
+tRNA charging (ARG) & $<$0.01 & tRNA charging (ASP) & $<$0.01 \\ 
+tRNA charging (GLU) & $<$0.01 & tRNA charging (GLU) & $<$0.01 \\ 
+mRNA degradation & $<$0.01 & tRNA charging (HIS) & $<$0.01 \\ 
+tRNA charging (TRP) & $<$0.01 & tRNA charging (LYS) & $<$0.01 \\ 
+tRNA charging (PRO) & $<$0.01 & tRNA charging (TYR) & $<$0.01 \\ 
+tRNA charging (ASN) & $<$0.01 & tRNA charging (ASN) & $<$0.01 \\ 
+tRNA charging (ILE) & $<$0.01 & tRNA charging (SER) & $<$0.01 \\ 
+tRNA charging (GLY) & $<$0.01 & tRNA charging (MET) & $<$0.01 \\ 
+tRNA charging (GLN) & $<$0.01 & tRNA charging (ILE) & $<$0.01 \\ 
+tRNA charging (LYS) & $<$0.01 & tRNA charging (VAL) & $<$0.01 \\ 
+tRNA charging (THR) & $<$0.01 & tRNA charging (PRO) & $<$0.01 \\ 
+tRNA charging (VAL) & $<$0.01 & tRNA charging (LEU) & $<$0.01 \\ 
+tRNA charging (MET) & $<$0.01 & tRNA charging (ARG) & $<$0.01 \\ 
+tRNA charging (LEU) & $<$0.01 & tRNA charging (TRP) & $<$0.01 \\ 
+R\_A\_syn\_6 & $<$0.01 & tRNA charging (cys) & $<$0.01 \\ 
+R\_or\_syn\_1 & $<$0.01 & tRNA charging (gly) & $<$0.01 \\ 
+R\_met & 0.01 & translation initiation & $<$0.01 \\ 
+R\_val & 0.01 & mRNA\_degradation\_CAT & $<$0.01 \\ 
+R\_leu & 0.01 & R\_gly\_fol\_net & 0.01 \\ 
+R\_adhE\_net & 0.01 & R\_talAB\_net & 0.02 \\ 
+R\_mdh\_net & 0.01 & R\_tkt1\_net & 0.02 \\ 
+R\_gly\_deg & 0.02 & R\_rpe\_net & 0.02 \\ 
+R\_thr\_deg2 & 0.02 & R\_rpi\_net & 0.03 \\ 
+R\_ackA\_net & 0.02 & R\_tkt2\_net & 0.04 \\ 
+R\_alaAC\_net & 0.02 & R\_val & 0.05 \\ 
+R\_ile & 0.03 & R\_leu & 0.05 \\ 
+R\_tyr & 0.03 & R\_mdh\_net & 0.06 \\ 
+R\_his & 0.03 & R\_tpiA\_net & 0.07 \\ 
+R\_mglx\_deg & 0.03 & R\_fbaA\_net & 0.07 \\ 
+R\_talAB\_net & 0.04 & R\_gly\_deg & 0.09 \\ 
+R\_gly\_fol\_net & 0.04 & R\_thr\_deg2 & 0.09 \\ 
+R\_rpe\_net & 0.04 & R\_pgi\_net & 0.09 \\ 
+R\_pta\_net & 0.04 & R\_mglx\_deg & 0.09 \\ 
+R\_pgk\_net & 0.05 & R\_mthfd\_net & 0.13 \\ 
+R\_gapA\_net & 0.05 & R\_zwf\_net & 0.18 \\ 
+R\_fbaA\_net & 0.05 & R\_tyr & 0.2 \\ 
+R\_eno\_net & 0.05 & R\_eno\_net & 0.2 \\ 
+R\_phe & 0.05 & R\_gpm\_net & 0.2 \\ 
+R\_tkt2\_net & 0.06 & R\_pgk\_net & 0.21 \\ 
+R\_fum\_net & 0.06 & R\_gapA\_net & 0.21 \\ 
+R\_tkt1\_net & 0.07 & R\_mthfc\_net & 0.28 \\ 
+R\_or\_syn\_2 & 0.07 & R\_met & 0.34 \\ 
+R\_gpm\_net & 0.08 & R\_pta\_net & 0.4 \\ 
+R\_rpi\_net & 0.09 & R\_ackA\_net & 0.41 \\ 
+R\_ctp\_1 & 0.09 & R\_fum\_net & 0.43 \\ 
+R\_ctp\_2 & 0.09 & R\_phe & 0.53 \\ 
+R\_tpiA\_net & 0.1 & R\_glk\_atp & 1 \\ 
+R\_A\_syn\_7 & 0.15 & R\_A\_syn\_5 & 1 \\ 
+R\_A\_syn\_12 & 0.17 & R\_A\_syn\_7 & 1 \\ 
+R\_ldh\_net & 0.17 & R\_omp\_syn & 1.09 \\ 
+R\_A\_syn\_5 & 0.2 & R\_ile & 1.13 \\ 
+R\_mthfr2a & 0.2 & R\_alaAC\_net & 1.49 \\ 
+R\_mthfr2b & 0.2 & R\_A\_syn\_8 & 1.76 \\ 
+R\_zwf\_net & 0.21 & R\_mthfr2a & 1.85 \\ 
+R\_mthfd\_net & 0.21 & R\_mthfr2b & 1.85 \\ 
+R\_ump\_syn & 0.22 & R\_icd\_net & 1.87 \\ 
+R\_omp\_syn & 0.22 & R\_his & 1.95 \\ 
+R\_lys\_deg & 0.23 & R\_A\_syn\_4 & 2.02 \\ 
+R\_lys & 0.23 & R\_thr\_deg3 & 2.08 \\ 
+R\_icd\_net & 0.23 & R\_ctp\_1 & 2.09 \\ 
+R\_thr\_deg3 & 0.24 & R\_ctp\_2 & 2.09 \\ 
+R\_A\_syn\_8 & 0.26 & R\_lys & 2.13 \\ 
+R\_trp\_deg & 0.27 & R\_lys\_deg & 2.13 \\ 
+R\_mthfc\_net & 0.28 & R\_ldh\_net & 2.27 \\ 
+R\_trp & 0.28 & R\_trp\_deg & 2.55 \\ 
+R\_acn\_net & 0.33 & R\_trp & 2.7 \\ 
+R\_pgi\_net & 0.33 & R\_acn\_net & 2.82 \\ 
+R\_fol\_e & 0.34 & R\_ump\_syn & 2.85 \\ 
+R\_A\_syn\_4 & 0.4 & R\_A\_syn\_3 & 3.07 \\ 
+R\_gmp\_syn & 0.44 & R\_xmp\_syn & 4.04 \\ 
+R\_A\_syn\_9 & 0.48 & R\_gmp\_syn & 4.04 \\ 
+R\_xmp\_syn & 0.53 & R\_A\_syn\_12 & 4.13 \\ 
+R\_A\_syn\_3 & 0.6 & R\_fol\_e & 4.37 \\ 
+R\_A\_syn\_10 & 0.63 & R\_A\_syn\_2 & 4.74 \\ 
+R\_fol\_2b & 0.63 & R\_A\_syn\_9 & 4.83 \\ 
+R\_gdhA\_net & 0.71 & R\_A\_syn\_10 & 4.83 \\ 
+R\_fol\_3 & 0.74 & R\_A\_syn\_1 & 5.02 \\ 
+R\_fol\_4 & 0.79 & R\_gdhA\_net & 5.14 \\ 
+R\_pflAB & 0.8 & R\_prpp\_syn & 6.11 \\ 
+R\_A\_syn\_2 & 0.81 & R\_fol\_4 & 6.24 \\ 
+R\_fol\_2a & 0.81 & R\_fol\_3 & 6.24 \\ 
+R\_fol\_1 & 0.99 & R\_fol\_2b & 7.03 \\ 
+R\_glk\_atp & 1 & R\_fol\_2a & 8.04 \\ 
+R\_A\_syn\_1 & 1 & R\_fol\_1 & 9.04 \\ 
+R\_arg\_deg & 1.23 & R\_glyA & 9.58 \\ 
+R\_glyA & 1.33 & R\_chor & 13.98 \\ 
+R\_prpp\_syn & 1.34 & R\_arg\_deg & 14.97 \\ 
+R\_chor & 1.35 & R\_sucCD & 17.94 \\ 
+R\_sucCD & 1.55 & R\_gaba\_deg1 & 17.95 \\ 
+R\_sucAB & 1.55 & R\_gaba\_deg2 & 17.95 \\ 
+R\_gaba\_deg1 & 1.56 & R\_glu\_deg & 17.95 \\ 
+R\_gaba\_deg2 & 1.56 & R\_sucAB & 18.06 \\ 
+R\_glu\_deg & 1.56 & R\_arg & 18.14 \\ 
+R\_arg & 1.68 & R\_thr\_deg1 & 19.06 \\ 
+R\_pdh & 2.06 & R\_pflAB & 19.97 \\ 
+R\_aceB & 2.3 & R\_thr & 22.23 \\ 
+R\_thr\_deg1 & 2.32 & R\_aceB & 28.81 \\ 
+R\_aceA & 2.36 & R\_aceA & 28.81 \\ 
+R\_thr & 2.48 & R\_pdh & 29.86 \\ 
+R\_gltA & 2.62 & R\_gnd & 31.9 \\ 
+R\_gnd & 2.62 & R\_gltA & 32.2 \\ 
+R\_cysEMK & 4.59 & R\_cysEMK & 48.93 \\ 
+R\_cys\_deg & 4.6 & R\_cys\_deg & 49.31 \\ 
+R\_pro & 5.45 & R\_pro & 61.2 \\ 
+R\_pro\_deg & 5.47 & R\_eda & 61.86 \\ 
+R\_edd & 5.96 & R\_edd & 61.86 \\ 
+R\_eda & 5.96 & R\_pro\_deg & 62.62 \\ 
+R\_ser\_deg & 6.43 & R\_ser\_deg & 68.5 \\ 
+R\_atp\_amp & 6.53 & R\_pgl & 70.12 \\ 
+R\_utp\_ump & 6.53 & R\_serABC & 72.05 \\ 
+R\_gtp\_gmp & 6.53 & R\_atp\_amp & 74.22 \\ 
+R\_ctp\_cmp & 6.53 & R\_utp\_ump & 74.22 \\ 
+R\_atp\_cmp & 6.56 & R\_gtp\_gmp & 74.22 \\ 
+R\_atp\_gmp & 6.6 & R\_ctp\_cmp & 74.22 \\ 
+R\_atp\_ump & 6.62 & R\_atp\_cmp & 74.74 \\ 
+R\_pgl & 6.67 & R\_atp\_gmp & 76.11 \\ 
+R\_serABC & 6.72 & R\_atp\_ump & 76.78 \\ 
+R\_nuo & 7.39 & R\_app & 86.61 \\ 
+R\_ndh1 & 7.39 & R\_ndh1 & 86.63 \\ 
+R\_ndh2 & 7.39 & R\_nuo & 86.63 \\ 
+R\_frd & 7.44 & R\_maeA & 86.77 \\ 
+R\_app & 7.44 & R\_ndh2 & 87.01 \\ 
+R\_sdh & 7.93 & R\_frd & 87.01 \\ 
+R\_maeA & 7.99 & R\_maeB & 88.17 \\ 
+R\_maeB & 8.01 & R\_sdh & 90.66 \\ 
+R\_cyo & 8.03 & R\_cyo & 92.08 \\ 
+R\_cyd & 8.03 & R\_cyd & 92.08 \\ 
+R\_atp & 11.71 & R\_atp & 134.61 \\ 
+R\_pps & 12.98 & R\_pps & 148.45 \\ 
+R\_fdp & 12.98 & R\_utp\_adp & 148.45 \\ 
+R\_gtp\_adp & 12.98 & R\_asnB & 148.45 \\ 
+R\_atp\_adp & 12.98 & R\_gln\_deg & 148.45 \\ 
+R\_utp\_adp & 12.98 & R\_gtp\_adp & 148.45 \\ 
+R\_pck & 12.98 & R\_gltBD & 148.45 \\ 
+R\_ctp\_adp & 12.98 & R\_acs & 148.45 \\ 
+R\_asnB & 13 & R\_atp\_adp & 148.45 \\ 
+R\_gltBD & 13 & R\_ctp\_adp & 148.45 \\ 
+R\_gln\_deg & 13 & R\_fdp & 148.45 \\ 
+R\_cdp\_ctp & 13.01 & R\_pck & 148.45 \\ 
+R\_glnA & 13.05 & R\_cdp\_ctp & 148.96 \\ 
+R\_udp\_utp & 13.05 & R\_glnA & 149.67 \\ 
+R\_acs & 13.06 & R\_udp\_utp & 150.75 \\ 
+R\_ppa & 13.08 & R\_ppa & 150.79 \\ 
+R\_gdp\_gtp & 13.1 & R\_gdp\_gtp & 151.05 \\ 
+R\_adk\_atp & 13.36 & R\_adk\_atp & 152.88 \\ 
+R\_ppc & 14.22 & R\_ppc & 158.68 \\ 
+R\_pfk & 14.9 & R\_pfk & 161.64 \\ 
+R\_pyk & 15.89 & R\_pyk & 170.95 \\ 
+R\_pnt2 & 22.45 & R\_pnt2 & 258.03 \\ 
+R\_pnt1 & 25.5 & R\_asp\_deg & 286.46 \\ 
+R\_asp\_deg & 25.5 & R\_pnt1 & 286.46 \\ 
+R\_aspC & 25.83 & R\_aspC & 290.86 \\ 
+R\_asnA & 247.53 & R\_asnA & 4421.48 \\ 
+R\_asn\_deg & 247.53 & R\_asn\_deg & 4421.48
